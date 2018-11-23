@@ -2,24 +2,20 @@ package main
 
 import (
 	"fmt"
+	"gopkg.in/AlecAivazis/survey.v1"
 	"log"
 )
 
 func main() {
+	toolans := struct {
+		Tool string `survey:"tool-select"`
+	}{}
 	fmt.Println("*****************")
 	fmt.Println("* File-Maker-GO *")
 	fmt.Println("*****************")
-
-	fmt.Println("What would you like to do today? \n" +
-		"1. Sign and Encrypt")
-	//reading an integer
-	var choice int
-	_, err := fmt.Scan(&choice)
+	err := survey.Ask(MainMenu, &toolans)
 	if err != nil {
-		log.Panic("oops", err)
+		log.Panic(err)
 	}
-	switch choice {
-	case 1:
-		fmt.Println("placeholder")
-	}
+
 }
