@@ -7,8 +7,8 @@ var MainMenu = []*survey.Question{
 		Name: "tool-select",
 		Prompt: &survey.Select{
 			Message: "Select a tool.",
-			Options: []string{"Sign & Encrypt", "Forecast Locations Parser", "Quit"},
-			Default: "Sign & Encrypt",
+			Options: []string{"Forecast Locations Parser", "Background Mode", "Quit"},
+			Default: "Background Mode",
 		},
 	},
 }
